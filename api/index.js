@@ -10,7 +10,8 @@ const cookieParser = require('cookie-parser');
 const imageDownloader = require('image-downloader');
 const multer = require('multer');
 const fs = require('fs');
-const PORT = process.env.BASE_URL || 4000
+const PORT = 4000
+// process.env.BASE_URL || 
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(cors({
     credentials: true,
     origin: 'http://localhost:5173',
 }));
+// app.use(cors());
 
 function getUserDataFromReq(req){
     return new Promise((resolve, reject)=>{
