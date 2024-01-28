@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const imageDownloader = require('image-downloader');
 const multer = require('multer');
 const fs = require('fs');
+const PORT = process.env.BASE_URL || 4000
 
 const app = express();
 
@@ -177,4 +178,4 @@ app.get('/bookings', async (req, res)=>{
     res.json(await Booking.find({user:userData.id}).populate('place'));
 })
 
-app.listen(4000);
+app.listen(PORT);
